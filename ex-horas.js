@@ -9,7 +9,7 @@ const prompt = require("prompt-sync")();
 
 let hora;
 let minuto;
-let fuso = "AM";
+let periodo = "AM";
 
 do {
   hora = parseInt(prompt("Digite a hora: "));
@@ -31,14 +31,14 @@ do {
 
 if (hora === 0 || hora > 11){
   if (hora > 11){ 
-    fuso = "PM"
+    periodo = "PM"
   }
   hora = converterHora(hora);
 }
 
 imprimirHora();
 
-function converterHora(hora, fuso) {
+function converterHora(hora, periodo) {
   if (hora === 0) {
     return 12;
   } else {
@@ -47,5 +47,5 @@ function converterHora(hora, fuso) {
 }
 
 function imprimirHora() {
-  console.log(`Horário: ${hora}:${minuto} ${fuso}`);
+  console.log(`Horário: ${hora}:${minuto} ${periodo}`);
 }
